@@ -24,25 +24,20 @@ Vagrant.configure(2) do |config|
       kafka.vm.network "forwarded_port", guest: 9092, host: 9092
     end
 
-    config.vm.define "large-db" do |cassandra|
-      cassandra.vm.box = "ubuntu/trusty64"
-      cassandra.vm.hostname = "large-db"
-      cassandra.vm.network "private_network", ip: "192.168.33.40"
-      cassandra.vm.network "forwarded_port", guest: 7199, host: 7199
-      cassandra.vm.network "forwarded_port", guest: 7000, host: 7000
-      cassandra.vm.network "forwarded_port", guest: 7001, host: 7001
-      cassandra.vm.network "forwarded_port", guest: 9160, host: 9160
-      cassandra.vm.network "forwarded_port", guest: 9042, host: 9042
+    config.vm.define "large-db" do |large_db|
+      large_db.vm.box = "ubuntu/trusty64"
+      large_db.vm.hostname = "large-db"
+      large_db.vm.network "private_network", ip: "192.168.33.40"
+      large_db.vm.network "forwarded_port", guest: 7199, host: 7199
+      large_db.vm.network "forwarded_port", guest: 7000, host: 7000
+      large_db.vm.network "forwarded_port", guest: 7001, host: 7001
+      large_db.vm.network "forwarded_port", guest: 9160, host: 9160
+      large_db.vm.network "forwarded_port", guest: 9042, host: 9042
     end
 
-    config.vm.define "fast-db" do |cassandra|
-      cassandra.vm.box = "ubuntu/trusty64"
-      cassandra.vm.hostname = "cassandra"
-      cassandra.vm.network "private_network", ip: "192.168.33.40"
-      cassandra.vm.network "forwarded_port", guest: 7199, host: 7199
-      cassandra.vm.network "forwarded_port", guest: 7000, host: 7000
-      cassandra.vm.network "forwarded_port", guest: 7001, host: 7001
-      cassandra.vm.network "forwarded_port", guest: 9160, host: 9160
-      cassandra.vm.network "forwarded_port", guest: 9042, host: 9042
+    config.vm.define "fast-db" do |fast_db|
+      fast_db.vm.box = "ubuntu/trusty64"
+      fast_db.vm.hostname = "fast-db"
+      fast_db.vm.network "private_network", ip: "192.168.33.50"
     end
 end
