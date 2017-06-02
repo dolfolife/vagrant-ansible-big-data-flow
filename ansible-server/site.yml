@@ -1,0 +1,17 @@
+---
+
+- name: "Install all common dependencies"
+  hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
+  roles:
+    - common
+
+- name: "installing zookeeper"
+  hosts: zookeeper
+  become: yes
+  become_user: root
+  become_method: sudo
+  roles:
+   - { role: 'grycap.zookeeper'}

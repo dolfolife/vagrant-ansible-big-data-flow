@@ -1,5 +1,6 @@
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
+[all:vars]
+ansible_user=vagrant
+ansible_pass=vagrant
 
 [zookeeper]
 192.168.33.20

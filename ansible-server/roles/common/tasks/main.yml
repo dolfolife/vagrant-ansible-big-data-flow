@@ -1,0 +1,4 @@
+---
+
+- name: "Installing common packages of apt"
+  apt: name=sshpass state=present

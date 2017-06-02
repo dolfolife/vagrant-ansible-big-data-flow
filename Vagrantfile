@@ -28,11 +28,6 @@ Vagrant.configure(2) do |config|
       large_db.vm.box = "ubuntu/trusty64"
       large_db.vm.hostname = "large-db"
       large_db.vm.network "private_network", ip: "192.168.33.40"
-      large_db.vm.network "forwarded_port", guest: 7199, host: 7199
-      large_db.vm.network "forwarded_port", guest: 7000, host: 7000
-      large_db.vm.network "forwarded_port", guest: 7001, host: 7001
-      large_db.vm.network "forwarded_port", guest: 9160, host: 9160
-      large_db.vm.network "forwarded_port", guest: 9042, host: 9042
     end
 
     config.vm.define "fast-db" do |fast_db|

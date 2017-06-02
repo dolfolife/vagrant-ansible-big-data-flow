@@ -1,0 +1,4 @@
+---
+
+- name: "make sure zookeeper works"
+  shell: "pwd"
